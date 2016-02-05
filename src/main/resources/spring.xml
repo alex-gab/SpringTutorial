@@ -4,6 +4,31 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 	   					   http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="triangle" class="org.alex.learning.Triangle"/>
+    <bean id="triangle" class="org.alex.learning.Triangle">
+        <constructor-arg>
+            <list>
+                <ref bean="a"/>
+                <ref bean="b"/>
+                <ref bean="c"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="a" class="org.alex.learning.Point">
+        <constructor-arg index="0" value="0"/>
+        <constructor-arg index="1" value="1"/>
+    </bean>
+
+    <bean id="b" class="org.alex.learning.Point">
+        <constructor-arg index="0" value="2"/>
+        <constructor-arg index="1" value="3"/>
+    </bean>
+
+    <bean id="c" class="org.alex.learning.Point">
+        <constructor-arg index="0" value="4"/>
+        <constructor-arg index="1" value="5"/>
+    </bean>
+
+    <alias name="triangle" alias="triangle-alias"/>
 
 </beans>

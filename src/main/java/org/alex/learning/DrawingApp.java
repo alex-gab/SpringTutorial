@@ -6,7 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public final class DrawingApp {
     public static void main(String[] args) {
         final BeanFactory beanFactory = new ClassPathXmlApplicationContext("spring.xml");
-        final Triangle triangle = (Triangle) beanFactory.getBean("triangle");
+        final Triangle triangle = (Triangle) beanFactory.getBean("triangle-alias");
         triangle.draw();
     }
 }
